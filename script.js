@@ -41,15 +41,24 @@ function initBoard() {
 function addDragEvents() {
   board.forEach(candy => {
     candy.addEventListener("dragstart", dragStart);
-    candy.addEventListener("dragover", e => e.preventDefault());
+    candy.addEventListener("dragover", e => {
+      e.preventDefault(); // Autoriser le drop
+    });
     candy.addEventListener("drop", dragDrop);
     candy.addEventListener("dragend", dragEnd);
   });
 }
 
-function dragStart() { draggedId = parseInt(this.dataset.id); }
-function dragDrop() { replacedId = parseInt(this.dataset.id); }
-function dragEnd() {
+function dragStart(e) {
+  draggedId = parseInt(this.dataset.id);
+}
+
+function dragDrop(e) {
+  e.preventDefault();
+  replacedId = parseInt(this.dataset.id);
+}
+
+function dragEnd(e) {
   if (replacedId !== undefined) {
     let draggedCandy = board[draggedId].textContent;
     let replacedCandy = board[replacedId].textContent;
