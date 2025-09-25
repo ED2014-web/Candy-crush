@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Super Candy Crush Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🍭 Super Candy Crush Clone 🍭</h1>
+
+  <!-- MENU -->
+  <div id="menu">
+    <p>Bienvenue dans le jeu !</p>
+    <button onclick="startGame()">Jouer</button>
+  </div>
+
+  <!-- JEU -->
+  <div id="game">
+    <div id="level">Niveau : 1</div>
+    <div id="score">Score : 0</div>
+    <div id="timer">Temps : 60s</div>
+    <div id="board"></div>
+  </div>
+
+  <!-- GAME OVER -->
+  <div id="gameover">
+    <h2 id="endMessage"></h2>
+    <button onclick="restartGame()">Rejouer</button>
+    <button onclick="backToMenu()">Menu</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

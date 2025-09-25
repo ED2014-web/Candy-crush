@@ -1,0 +1,55 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #ffb6e9, #ffd3f3);
+  margin: 0; padding: 0;
+}
+h1 { color: #d1006f; text-shadow: 1px 1px 2px white; margin-top: 20px; }
+#menu, #game, #gameover {
+  display: none;
+}
+#score, #timer, #level { font-size: 20px; margin: 10px; }
+#board {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  gap: 3px;
+  margin: 20px auto;
+  background: white;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: max-content;
+}
+.candy {
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s, opacity 0.5s;
+}
+.candy.pop {
+  animation: pop 0.4s ease forwards;
+}
+@keyframes pop {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(0); opacity: 0; }
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #d1006f;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background 0.3s;
+}
+button:hover { background: #a80054; }
